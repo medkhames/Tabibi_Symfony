@@ -1,0 +1,71 @@
+{% extends 'front.html.twig' %}
+
+{% block title %}Hello  {{ controller_name }}!!!{% endblock %}
+
+{% block body %}
+
+    {# {{ form(formP) }} #}
+
+
+
+    <div class="col-xl-6 col-lg-12">
+        <div class="card">
+            <div class="card-header">
+                <h4 class="card-title">Ajouter Produit</h4>
+            </div>
+            <div class="card-body">
+                {{ form_start(form) }}
+                <div class="basic-form">
+                    <form>
+
+                        <div class="row">
+                            <div class="mb-3 col-md-6">
+                                <label class="form-label">Nom Produit</label>
+                                {{ form_widget(form.nomProd,{'attr':{'class':'form-control'}}) }}
+
+                               {# <input type="text" class="form-control" placeholder="Nom Produit">#}
+                            </div>
+                            <div class="mb-3 col-md-6">
+                                <label class="form-label">Discription</label>
+                                {{ form_widget(form.discription,{'attr':{'class':'form-control'}}) }}
+                                {# <input type="text" class="form-control" placeholder="Nom Produit">#}
+                            </div>
+                            <div class="mb-3 col-md-6">
+                                <label class="form-label">Quantité</label>
+                                {{ form_widget(form.quantite,{'attr':{'class':'form-control'}}) }}
+                                {# <input type="text" class="form-control" placeholder="Nom Produit">#}
+                            </div>
+                            <div class="mb-3 col-md-6">
+                                <label class="form-label">Prix</label>
+                                {{ form_widget(form.prix,{'attr':{'class':'form-control'}}) }}
+
+                                {# <input type="text" class="form-control" placeholder="Nom Produit">#}
+
+                            </div>
+
+                        </div>
+                        <div class="row">
+                            <div class="mb-3 col-md-4">
+                                <label class="form-label">Catégories</label>
+
+                                <select {{ form_widget(form.categories,{'attr':{'class':'form-control'}})}} id="inputState" >
+                                    <option selected>Choose...</option>
+                                    <option>Medicament</option>
+                                    <option>Bébé & Maman</option>
+                                    <option>Complement Alimentaire</option>
+                                </select>
+                            </div>
+
+                        </div>
+
+
+                        <button type="submit" class="btn btn-primary">Save</button>
+                        {{ form_end(form) }}
+                    </form>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+{% endblock %}
